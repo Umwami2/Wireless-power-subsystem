@@ -80,3 +80,18 @@ This proves energy is transferring from TX to RX:
 
 
 The resonant tank circuit boosts voltage at the receiver beyond what simple induction would predict.
+## Photos
+
+### Circuit Diagram
+![Circuit Diagram](Circuit%20diagram)
+
+### Setup
+![Setup](setup)
+
+### Oscilloscope Readings
+![Oscilloscope 1](oscilloscope)
+![Oscilloscope 2](oscilloscope1)
+![Oscilloscope 3](oscilloscope2)
+
+### Demo
+![Demo Video](demo%20Vid)
