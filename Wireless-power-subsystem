@@ -2,7 +2,6 @@ AEROSTAT - Wireless Power Subsystem
 
 Wireless inductive power transfer system operating at 220 kHz, built for the AEROSTAT project. Features hand-wound air core coils with a transmitter/receiver pair and demonstrated loading effect proving energy transfer.
 
----
 
 Build History
 
@@ -20,7 +19,6 @@ Result: FAILURE
 - RX coil sees essentially zero field
 - Lesson: Toroidal inductors are great for power supplies but terrible for wireless power
 
----
 
 Attempt 2 — Hand-Wound Air Core Coils (Success)
 
