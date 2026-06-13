@@ -1,2 +1,82 @@
-# Wireless-power-subsystem
-wireless inductive power transfer operating at 220kHz,built for my AEROSTAT project. Features a hand-wound air core coil transmitter and rectifier with demonstrated loading effect and energy transfer.
+AEROSTAT - Wireless Power Subsystem
+
+Wireless inductive power transfer system operating at 220 kHz, built for the AEROSTAT project. Features hand-wound air core coils with a transmitter/receiver pair and demonstrated loading effect proving energy transfer.
+
+---
+
+Build History
+
+Attempt 1 — Toroidal Inductors (Failed)
+*Components:*
+- 220µH toroidal inductor + 1µF capacitor (TX & RX)
+- IN4007 diode, 330Ω resistor, LED, 100nF smoothing cap
+
+Calculated resonant frequency:
+f₀ = 1 / (2π√LC) = 1 / (2π√(220×10⁻⁶ × 1×10⁻⁶)) = 10,731 Hz
+
+Result: FAILURE
+- Reason: Toroidal inductors contain their magnetic field internally
+- The donut shape doesn't radiate outward
+- RX coil sees essentially zero field
+- Lesson: Toroidal inductors are great for power supplies but terrible for wireless power
+
+---
+
+Attempt 2 — Hand-Wound Air Core Coils (Success)
+
+Coil Winding Process
+- Wire: 30 AWG magnet wire
+- Form: Cylindrical marker (20–25 mm diameter)
+- Turns: 50
+- Direction: Same for both coils
+- Made 2 identical coils → same resonant frequency
+
+Coil Specifications
+| Parameter | Value |
+| Type | Air core, hand wound |
+| Diameter | 20–25 mm |
+| Turns | 50 |
+| Wire | 30 AWG |
+| Resistance | 1.4–2Ω |
+| Measured inductance | 52.3 µH |
+
+Capacitor
+- C₁ = 10nF (code: 103)
+- Resonant frequency (measured): 220,000 Hz ✓
+
+
+Circuit Design
+
+Transmitter (TX)
+- Wound coil (52.3 µH) + 10nF capacitor
+- 10Ω resistor + function generator (220 kHz, 3V amplitude)
+
+Receiver (RX)
+- Wound coil (52.3 µH) + 10nF capacitor
+- IN4007 diode + 100nF smoothing cap + 330Ω + LED
+
+Measurements & Results
+
+Setup
+- TX: Wound coil + 10nF cap + 10Ω resistor, function gen at 220 kHz, 3V amplitude
+- RX: Wound coil + 10nF cap + IN4007 diode + 100nF + 330Ω + LED
+
+Voltage Measurements
+
+- TX Voltage (alone) | 3 Vpp @ 220 kHz |
+- RX Voltage (near TX) | 5–6 Vpp |
+
+
+Loading Effect (Proof of Energy Transfer)
+
+When RX approached TX:
+- *VTX dropped* from 3V → ~1.8V
+- *VRX rose* to 5–6V simultaneously
+
+This proves energy is transferring from TX to RX:
+- TX loses energy = voltage drops
+- RX gains energy = voltage rises
+- *This is wireless power transfer!*
+
+
+The resonant tank circuit boosts voltage at the receiver beyond what simple induction would predict.
